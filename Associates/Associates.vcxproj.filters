@@ -7,6 +7,12 @@
     <Filter Include="Associates\Events">
       <UniqueIdentifier>{185DFA4A-8473-F8E0-CDEA-83023940C968}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{3e72966b-0434-47b3-8140-f24f4b4a9466}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{1f988850-970a-45d6-9c22-646ab5e7becc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Assoc_pch.h" />
@@ -35,6 +41,10 @@
     <ClInclude Include="Source\Associates\Log.h">
       <Filter>Associates</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Associates\Window.h" />
+    <ClInclude Include="WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Assoc_pch.cpp" />
@@ -43,6 +53,9 @@
     </ClCompile>
     <ClCompile Include="Source\Associates\Log.cpp">
       <Filter>Associates</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

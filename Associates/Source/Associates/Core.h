@@ -11,3 +11,11 @@
 #endif
 
 #define BIT(x) (1 << x)
+
+#ifdef ASSOC_ENABLE_ASSERTS
+	#define ASSOC_ASSERT(x, ...) {if(!(x)) {ASSOC_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define ASSOC_CORE_ASSERT(x, ...) {if(!(x)) {ASSOC_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define ASSOC_ASSERT(x, ...)
+	#define ASSOC_CORE_ASSERT(x, ...)
+#endif

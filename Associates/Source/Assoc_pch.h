@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Associates/Log.h"
+
 #ifdef ASSOC_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
