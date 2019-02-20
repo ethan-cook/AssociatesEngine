@@ -8,10 +8,10 @@
       <UniqueIdentifier>{185DFA4A-8473-F8E0-CDEA-83023940C968}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform">
-      <UniqueIdentifier>{3e72966b-0434-47b3-8140-f24f4b4a9466}</UniqueIdentifier>
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
-      <UniqueIdentifier>{1f988850-970a-45d6-9c22-646ab5e7becc}</UniqueIdentifier>
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -38,11 +38,19 @@
     <ClInclude Include="Source\Associates\Events\MouseEvent.h">
       <Filter>Associates\Events</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Associates\Layer.h">
+      <Filter>Associates</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Associates\LayerStack.h">
+      <Filter>Associates</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Associates\Log.h">
       <Filter>Associates</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Associates\Window.h" />
-    <ClInclude Include="WindowsWindow.h">
+    <ClInclude Include="Source\Associates\Window.h">
+      <Filter>Associates</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
   </ItemGroup>
@@ -51,10 +59,16 @@
     <ClCompile Include="Source\Associates\Application.cpp">
       <Filter>Associates</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Associates\Layer.cpp">
+      <Filter>Associates</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Associates\LayerStack.cpp">
+      <Filter>Associates</Filter>
+    </ClCompile>
     <ClCompile Include="Source\Associates\Log.cpp">
       <Filter>Associates</Filter>
     </ClCompile>
-    <ClCompile Include="WindowsWindow.cpp">
+    <ClCompile Include="Source\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
   </ItemGroup>

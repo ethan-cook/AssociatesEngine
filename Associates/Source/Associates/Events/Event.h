@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Assoc_pch.h"
 #include "Associates/Core.h"
 
 namespace Associates
@@ -31,9 +31,8 @@ namespace Associates
 
 	class ASSOC_API Event
 	{
-		friend class EventDispatcher;
-
 	public:
+		bool bHandled = false;
 
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
@@ -64,7 +63,7 @@ namespace Associates
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.m_Handled = func(*T(T*)&m_Event);
+				m_Event.bHandled = Func(*(T*)&m_Event);
 				return true;
 			}
 			return false;

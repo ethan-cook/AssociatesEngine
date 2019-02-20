@@ -63,14 +63,17 @@ project "Associates"
 
     filter "configurations:Debug"
         defines "ASSOC_DEBUG"
+		buildoptions "/MDd"
         symbols "On"
 
-    filter "configurations:Debug"
+    filter "configurations:Release"
         defines "ASSOC_RELEASE"
+		buildoptions "/MD"
         optimize "On"
 
-    filter "configurations:Debug"
+    filter "configurations:Dist"
         defines "ASSOC_DIST"
+		buildoptions "/MD"
         optimize "On"
 
 project "TechGame"
@@ -110,12 +113,15 @@ project "TechGame"
 
     filter "configurations:Debug"
         defines "ASSOC_DEBUG"
+		buildoptions "/MDd"
         symbols "On"
 
-    filter "configurations:Debug"
+    filter "configurations:Release"
         defines "ASSOC_RELEASE"
+		buildoptions "/MD"
         optimize "On"
 
-    filter "configurations:Debug"
+    filter "configurations:Dist"
         defines "ASSOC_DIST"
+		buildoptions "/MD"
         optimize "On"
