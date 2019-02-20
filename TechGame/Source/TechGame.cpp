@@ -3,6 +3,7 @@
 class TechGame : public Associates::Application
 {
 public:
+
 	TechGame()
 	{
 
