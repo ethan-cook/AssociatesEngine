@@ -4,8 +4,12 @@
     <Filter Include="Associates">
       <UniqueIdentifier>{B463E800-A01B-2A4E-0923-03AAF5F9C43E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Associates\Events">
+      <UniqueIdentifier>{185DFA4A-8473-F8E0-CDEA-83023940C968}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Assoc_pch.h" />
     <ClInclude Include="Source\Associates.h" />
     <ClInclude Include="Source\Associates\Application.h">
       <Filter>Associates</Filter>
@@ -16,11 +20,24 @@
     <ClInclude Include="Source\Associates\EntryPoint.h">
       <Filter>Associates</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Associates\Events\ApplicationEvent.h">
+      <Filter>Associates\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Associates\Events\Event.h">
+      <Filter>Associates\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Associates\Events\KeyEvent.h">
+      <Filter>Associates\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Associates\Events\MouseEvent.h">
+      <Filter>Associates\Events</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Associates\Log.h">
       <Filter>Associates</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Assoc_pch.cpp" />
     <ClCompile Include="Source\Associates\Application.cpp">
       <Filter>Associates</Filter>
     </ClCompile>

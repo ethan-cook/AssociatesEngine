@@ -18,6 +18,9 @@ project "Associates"
     targetdir ("Bin/" .. outputdir .. "/%{prj.name}")
     objdir ("Bin-Int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "Assoc_pch.h"
+    pchsource "Associates/Source/Assoc_pch.cpp"
+
     files
     {
         "%{prj.name}/Source/**.h",
@@ -26,6 +29,7 @@ project "Associates"
 
     includedirs
     {
+		"%{prj.name}/Source",
        "%{prj.name}/ThirdParty/spdlog/include"
     }
 
