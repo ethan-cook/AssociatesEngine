@@ -65,6 +65,10 @@
     <ClInclude Include="Source\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Associates\Input.h" />
+    <ClInclude Include="Source\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="Source\Associates\KeyCodes.h" />
+    <ClInclude Include="Source\Associates\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Assoc_pch.cpp" />
@@ -89,5 +93,6 @@
     <ClCompile Include="Source\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

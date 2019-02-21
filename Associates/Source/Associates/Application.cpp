@@ -3,6 +3,8 @@
 #include "Application.h"
 #include <glad/glad.h>
 
+#include "Input.h"
+
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
 namespace Associates
@@ -36,6 +38,7 @@ namespace Associates
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
 
+
 			m_Window->OnUpdate();
 		}
 	}
@@ -45,7 +48,7 @@ namespace Associates
 		EventDispatcher Dispactcher(e);
 		Dispactcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 
-		ASSOC_CORE_TRACE("{0}", e); 
+		//ASSOC_CORE_TRACE("{0}", e); 
 
 		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
 		{

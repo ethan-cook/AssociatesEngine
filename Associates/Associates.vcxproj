@@ -152,6 +152,9 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Associates\Input.h" />
+    <ClInclude Include="Source\Associates\KeyCodes.h" />
+    <ClInclude Include="Source\Associates\MouseButtonCodes.h" />
     <ClInclude Include="Source\Assoc_pch.h" />
     <ClInclude Include="Source\Associates.h" />
     <ClInclude Include="Source\Associates\Application.h" />
@@ -168,6 +171,7 @@
     <ClInclude Include="Source\Associates\Window.h" />
     <ClInclude Include="Source\Platform\OpenGL\ImGUI_OpenGL_Render.h" />
     <ClInclude Include="Source\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="Source\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Assoc_pch.cpp">
@@ -180,6 +184,7 @@
     <ClCompile Include="Source\Associates\Log.cpp" />
     <ClCompile Include="Source\Platform\OpenGL\ImGUI_OpenGL_Render.cpp" />
     <ClCompile Include="Source\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="Source\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="ThirdParty\GLFW\GLFW.vcxproj">

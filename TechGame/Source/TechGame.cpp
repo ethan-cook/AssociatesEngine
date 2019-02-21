@@ -10,12 +10,15 @@ public:
 
 	void OnUpdate() override
 	{
-		ASSOC_INFO("ExampleLayer::Update");
+		//ASSOC_INFO("ExampleLayer::Update");
+
+		if (Associates::Input::IsKeyPressed(ASSOC_KEY_TAB))
+			ASSOC_TRACE("Tab key is pressed!");
 	}
 
 	void OnEvent(Associates::Event& Event) override
 	{
-		ASSOC_INFO("{0}", Event);
+		//ASSOC_INFO("{0}", Event);
 	}
 };
 
