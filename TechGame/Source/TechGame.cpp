@@ -27,6 +27,7 @@ public:
 	TechGame()
 	{
 		PushLayer(new ExampleLayer());
+		PushOverlay(new Associates::ImGUILayer());
 	}
 
 	~TechGame()

@@ -12,8 +12,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Associates/ThirdParty/GLFW/include/"
+IncludeDir["glad"] = "Associates/ThirdParty/glad/include/"
+IncludeDir["imgui"] = "Associates/ThirdParty/imgui/"
 
 include "Associates/ThirdParty/GLFW/"
+include "Associates/ThirdParty/glad/"
+include "Associates/ThirdParty/imgui"
 
 project "Associates"
     location "Associates"
@@ -36,12 +40,16 @@ project "Associates"
     {
 		"%{prj.name}/Source",
        "%{prj.name}/ThirdParty/spdlog/include",
-       "%{IncludeDir.GLFW}"
+       "%{IncludeDir.GLFW}",
+       "%{IncludeDir.glad}",
+       "%{IncludeDir.imgui}"
     }
 
     links
     {
         "GLFW",
+        "glad",
+        "ImGUI",
         "opengl32.lib"
     }
 
@@ -53,7 +61,8 @@ project "Associates"
         defines
         {
             "ASSOC_PLATFORM_WINDOWS",
-            "ASSOC_BUILD_DLL"
+            "ASSOC_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands

@@ -24,6 +24,9 @@ namespace Associates
 
 		void PushOverlay(Layer* Overlay);
 
+		inline static Application& Get() { return *s_Instance; }
+		inline Window& GetWindow() { return *m_Window; }
+
 	private:
 
 		bool OnWindowClose(WindowCloseEvent& e);
@@ -33,6 +36,8 @@ namespace Associates
 		bool m_bRunning = true;
 
 		LayerStack m_LayerStack;
+
+		static Application* s_Instance;
 	};
 
 	//To be defined in Client

@@ -79,8 +79,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Assoc_pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>ASSOC_PLATFORM_WINDOWS;ASSOC_BUILD_DLL;ASSOC_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;ThirdParty\spdlog\include;ThirdParty\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ASSOC_PLATFORM_WINDOWS;ASSOC_BUILD_DLL;GLFW_INCLUDE_NONE;ASSOC_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Source;ThirdParty\spdlog\include;ThirdParty\GLFW\include;ThirdParty\glad\include;ThirdParty\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -102,8 +102,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Assoc_pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>ASSOC_PLATFORM_WINDOWS;ASSOC_BUILD_DLL;ASSOC_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;ThirdParty\spdlog\include;ThirdParty\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ASSOC_PLATFORM_WINDOWS;ASSOC_BUILD_DLL;GLFW_INCLUDE_NONE;ASSOC_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Source;ThirdParty\spdlog\include;ThirdParty\GLFW\include;ThirdParty\glad\include;ThirdParty\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -129,8 +129,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Assoc_pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>ASSOC_PLATFORM_WINDOWS;ASSOC_BUILD_DLL;ASSOC_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;ThirdParty\spdlog\include;ThirdParty\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ASSOC_PLATFORM_WINDOWS;ASSOC_BUILD_DLL;GLFW_INCLUDE_NONE;ASSOC_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Source;ThirdParty\spdlog\include;ThirdParty\GLFW\include;ThirdParty\glad\include;ThirdParty\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -161,10 +161,12 @@
     <ClInclude Include="Source\Associates\Events\Event.h" />
     <ClInclude Include="Source\Associates\Events\KeyEvent.h" />
     <ClInclude Include="Source\Associates\Events\MouseEvent.h" />
+    <ClInclude Include="Source\Associates\GUI\ImGUILayer.h" />
     <ClInclude Include="Source\Associates\Layer.h" />
     <ClInclude Include="Source\Associates\LayerStack.h" />
     <ClInclude Include="Source\Associates\Log.h" />
     <ClInclude Include="Source\Associates\Window.h" />
+    <ClInclude Include="Source\Platform\OpenGL\ImGUI_OpenGL_Render.h" />
     <ClInclude Include="Source\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
@@ -172,14 +174,22 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Source\Associates\Application.cpp" />
+    <ClCompile Include="Source\Associates\GUI\ImGUILayer.cpp" />
     <ClCompile Include="Source\Associates\Layer.cpp" />
     <ClCompile Include="Source\Associates\LayerStack.cpp" />
     <ClCompile Include="Source\Associates\Log.cpp" />
+    <ClCompile Include="Source\Platform\OpenGL\ImGUI_OpenGL_Render.cpp" />
     <ClCompile Include="Source\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="ThirdParty\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="ThirdParty\glad\glad.vcxproj">
+      <Project>{DD62977C-C999-980D-7286-7E105E9C140F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="ThirdParty\imgui\ImGUI.vcxproj">
+      <Project>{80FB640D-EC0F-8DBE-B591-301E216589EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

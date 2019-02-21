@@ -5,6 +5,8 @@
 #include "Associates/Events/MouseEvent.h"
 #include "Associates/Events/KeyEvent.h"
 
+#include <glad/glad.h>
+
 namespace Associates
 {
 	static bool s_GLFWInitialized = false;
@@ -48,6 +50,10 @@ namespace Associates
 
 		m_Window = glfwCreateWindow((int)m_Data.Width, (int)m_Data.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+
+		int Status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		ASSOC_CORE_ASSERT(Status, "Failed to intialize glad!");
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
@@ -99,6 +105,14 @@ namespace Associates
 				default:
 					break;
 			}
+		});
+
+		glfwSetCharCallback(m_Window, [](GLFWwindow* Window, unsigned int KeyCode)
+		{
+			WindowData& Data = *(WindowData*)glfwGetWindowUserPointer(Window);
+
+			KeyTypedEvent Event(KeyCode);
+			Data.EventCallback(Event);
 		});
 
 		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* Window, int Button, int Action, int Mods)

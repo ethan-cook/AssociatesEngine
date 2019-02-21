@@ -4,3 +4,6 @@
 [submodule "Associates/ThirdParty/GLFW"]
 	path = Associates/ThirdParty/GLFW
 	url = https://github.com/glfw/glfw
+[submodule "Associates/ThirdParty/imgui"]
+	path = Associates/ThirdParty/imgui
+	url = https://github.com/ocornut/imgui

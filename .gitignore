@@ -2,6 +2,7 @@
 .vs/
 Bin/
 Bin-Int/
+Associates/ThirdParty/GLFW
 
 #Files
 *.user
